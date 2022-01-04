@@ -12,4 +12,5 @@ module.exports = {
 		},
 	},
 	include: ['*/.js'],
-	exclude: ['node_m
+	exclude: ['node_modules', '.next'],
+}
