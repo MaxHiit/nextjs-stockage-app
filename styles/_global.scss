@@ -29,6 +29,11 @@ a {
 	text-decoration: none;
 }
 
+ul,
+li {
+	list-style: none;
+}
+
 header {
 	height: 10vh;
 }
@@ -49,6 +54,13 @@ footer {
 	max-width: 90%;
 	width: 100%;
 	@include margin(auto);
+}
+
+.image-wrapper {
+	max-height: auto;
+	max-width: 330px;
+	width: 100%;
+	height: 100%;
 }
 
 .flex {

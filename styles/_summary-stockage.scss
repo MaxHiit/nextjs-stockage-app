@@ -1,0 +1,30 @@
+.summary-stockage {
+	&-price {
+		font-size: 2.5rem;
+	}
+
+	&-volume {
+		font-size: 2rem;
+	}
+	&-content {
+		font-size: 2rem;
+	}
+
+	&-advantage {
+		@include margin(space(3));
+
+		&-title {
+			font-size: 3rem;
+		}
+
+		&-item {
+			p {
+				font-size: 2rem;
+			}
+
+			&--green {
+				color: $color-green;
+			}
+		}
+	}
+}
