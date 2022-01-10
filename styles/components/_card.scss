@@ -1,0 +1,31 @@
+.card {
+	max-width: calc(33.3333% - 20px);
+	border: 1px solid lightgrey;
+	border-radius: 20px;
+	-webkit-box-shadow: 5px 5px 0px -2px #939393;
+	box-shadow: 5px 5px 0px -2px #939393;
+	@include padding(20px);
+
+	&-list {
+		gap: space(3);
+	}
+
+	&-content {
+		text-align: center;
+
+		&-title {
+			font-size: 2.5rem;
+			@include padding(10px 0);
+		}
+		&-description {
+			font-size: 2.2rem;
+		}
+		&-stockage {
+			font-size: 2.2rem;
+			@include padding(10px 0);
+		}
+		&-price {
+			font-size: 2rem;
+		}
+	}
+}

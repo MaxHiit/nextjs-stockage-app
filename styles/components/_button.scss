@@ -1,0 +1,13 @@
+.btn {
+	background: transparent;
+	border: 1px solid $color-blue;
+	border-radius: 5px;
+	-webkit-box-shadow: 5px 5px 0px -2px #939393;
+	box-shadow: 5px 5px 0px -2px #939393;
+	color: $color-blue;
+	@include padding(space(2));
+	@include margin(space(2) 0);
+	font-size: 2rem;
+	width: fit-content;
+	cursor: pointer;
+}
