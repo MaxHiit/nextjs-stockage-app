@@ -2,11 +2,13 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@components/*": ["components/*"],
+			"@components/*": ["src/components/*"],
+			"@context/*": ["context/*"],
+			"@utils/*": ["utils/*"],
 			"@config/*": ["config/*"],
 			"@api/*": ["api/*"],
 			"@lib/*": ["lib/*"],
-			"@styles/*": ["styles/*"]
+			"@styles/*": ["styles/*"],
 		}
 	},
 	"include": ["**/*.js"],
