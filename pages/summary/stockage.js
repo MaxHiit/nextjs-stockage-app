@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Layout from '@components/Layout'
-import { useUserContext } from '@context/UserContext'
+// import { useUserContext } from '@context/UserContext'
 import React from 'react'
 
 import summaryStockage from '../../public/images/summary-stockage.png'
 
 const Stockage = () => {
-	const { userData } = useUserContext()
+	// const { userData } = useUserContext()
 	console.log(summaryStockage)
 
 	return (
