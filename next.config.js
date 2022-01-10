@@ -4,7 +4,9 @@ module.exports = {
 	compilerOptions: {
 		baseUrl: '.',
 		paths: {
-			'@components/': ['components/'],
+			'@components/': ['src/components/'],
+			'@context/': ['context/'],
+			'@utils/': ['utils/'],
 			'@config/': ['config/'],
 			'@api/': ['api/'],
 			'@lib/': ['lib/'],
