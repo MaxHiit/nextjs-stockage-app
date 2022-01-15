@@ -7,6 +7,7 @@ const initialStateStep = {
 	stockage_step: {},
 	packaging_step: false,
 	transport_step: {},
+	insurance_step: {},
 }
 
 export const ContextProvider = ({ children }) => {

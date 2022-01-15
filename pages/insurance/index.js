@@ -1,31 +1,30 @@
 import { useStepContext } from '@context/stepContext'
-import { DATA_TRANSPORT } from '@utils/mockData'
+import { DATA_INSURANCE } from '@utils/mockData'
 import routes from '@config/routes'
 import Layout from '@components/Layout'
 import Card from '@components/Card'
 
-const Transport = () => {
+const Insurance = () => {
 	const { dispatch } = useStepContext()
 
 	const _handleClick = (data) => {
-		const { title, price, benefits, src } = data
+		const { title, description, price, src } = data
 		dispatch({
-			type: 'ADD_TRANSPORT_STEP',
-			payload: { title, price, benefits, src },
+			type: 'ADD_INSURANCE_STEP',
+			payload: { title, description, price, src },
 		})
 	}
-
 	return (
-		<Layout pageTitle='Comment voulez-vous transporter vos affaires en stockage ?'>
-			<section className='section-page'>
+		<Layout pageTitle='Avez vous besoin d’une assurance supplémentaire ?'>
+			<section className='section-page summary-stockage'>
 				<div className='flex flex-column flex-centered'>
 					<div className='card-list flex flex-row flex-centered'>
-						{DATA_TRANSPORT.map((data, index) => (
+						{DATA_INSURANCE.map((data) => (
 							<Card
-								// className='card-content--auto-height'
-								key={index + data.id}
+								className='card-content--auto-height'
+								key={data.id}
 								data={data}
-								route={routes.insurance}
+								route={routes.contact}
 								onClickHandle={() => _handleClick(data)}
 							/>
 						))}
@@ -36,4 +35,4 @@ const Transport = () => {
 	)
 }
 
-export default Transport
+export default Insurance

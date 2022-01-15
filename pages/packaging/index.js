@@ -2,14 +2,13 @@ import { useStepContext } from '@context/stepContext'
 import { DATA_PACKAGING } from '@utils/mockData'
 import routes from '@config/routes'
 import Layout from '@components/Layout'
-import CardPackaging from '@components/CardPackaging'
+import Card from '@components/Card'
 
 export const Packaging = () => {
 	const { dispatch } = useStepContext()
 
-	const _handleClick = (data, e) => {
+	const _handleClick = (data) => {
 		const { need_help } = data
-		e.preventDefault()
 		dispatch({
 			type: 'ADD_PACKAGING',
 			payload: need_help,
@@ -17,17 +16,17 @@ export const Packaging = () => {
 	}
 
 	return (
-		<Layout pageTitle='Votre tarif de stockage'>
+		<Layout pageTitle='Avez-vous besoin d’aide pour démonter, protéger vos meubles ou emballer vos cartons ?'>
 			<section className='section-page summary-stockage'>
 				<div className='flex flex-column flex-centered'>
 					<div className='card-list flex flex-row flex-centered'>
 						{DATA_PACKAGING.map((data) => (
-							<CardPackaging
-								className='card-packaging-content'
+							<Card
+								className='card-content--auto-height'
 								key={data.id}
 								data={data}
 								route={routes.transport}
-								onClickHandle={(e) => _handleClick(data, e)}
+								onClickHandle={() => _handleClick(data)}
 							/>
 						))}
 					</div>

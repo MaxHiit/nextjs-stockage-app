@@ -88,3 +88,27 @@ export const DATA_TRANSPORT = [
 		src: '/images/transport_storage.jpg',
 	},
 ]
+
+export const DATA_INSURANCE = [
+	{
+		id: 1,
+		title: 'Basique',
+		description: 'Vos affaires sont assurées à hauteur de 100€/m3',
+		price: 0,
+		src: '/images/insurance_basique.png',
+	},
+	{
+		id: 2,
+		title: 'Standard',
+		description: 'Vos affaires sont assurées à hauteur de 1000€.',
+		price: 12,
+		src: '/images/insurance_standard.png',
+	},
+	{
+		id: 3,
+		title: 'Premium',
+		description: 'Vos affaires sont assurées à hauteur de 2500€.',
+		price: 25,
+		src: '/images/insurance_premium.png',
+	},
+]

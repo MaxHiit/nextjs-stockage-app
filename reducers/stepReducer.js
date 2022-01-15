@@ -26,6 +26,13 @@ export const stepReducer = (state, action) => {
 					...action.payload,
 				},
 			}
+		case 'ADD_INSURANCE_STEP':
+			return {
+				...state,
+				insurance_step: {
+					...action.payload,
+				},
+			}
 		default:
 			return state
 	}

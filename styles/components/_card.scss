@@ -11,8 +11,10 @@
 	}
 
 	&-content {
+		justify-content: flex-start;
 		text-align: center;
-		height: 345px;
+		height: 260px;
+		@include margin(space(3.5) 0);
 
 		&-title {
 			font-size: 2.5rem;
@@ -29,24 +31,21 @@
 		&-price {
 			font-size: 2rem;
 		}
+
+		&--auto-height {
+			height: auto;
+		}
 	}
 
-	&-packaging {
-		&-content {
-			height: auto;
-			@include margin(space(3.5) 0);
-		}
+	&-bottom {
+		justify-content: space-between;
+		align-items: center;
+		border-top: 1px solid $color-border;
+		margin: 0 -20px;
+		padding: 20px 20px 0;
 
-		&-bottom {
-			justify-content: space-between;
-			align-items: center;
-			border-top: 1px solid $color-border;
-			margin: 0 -20px;
-			padding: 20px 20px 0;
-
-			.btn {
-				margin: 0;
-			}
+		.btn {
+			margin: 0;
 		}
 	}
 
