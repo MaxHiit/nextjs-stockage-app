@@ -1,56 +1,62 @@
-import Image from 'next/image'
-import Layout from '@components/Layout'
-// import { useUserContext } from '@context/UserContext'
-import React from 'react'
+import { useStepContext } from '@context/stepContext'
 
-import summaryStockage from '../../public/images/summary-stockage.png'
+import Layout from '@components/Layout'
+import Image from '@components/Image'
+import Button from '@components/Button'
+import routes from '@config/routes'
 
 const Stockage = () => {
-	// const { userData } = useUserContext()
-	console.log(summaryStockage)
+	const { steps } = useStepContext()
 
 	return (
 		<Layout pageTitle='Votre tarif de stockage'>
 			<section className='section-page summary-stockage'>
 				<div className='flex flex-column flex-centered'>
-					<div className='image-wrapper'>
-						<Image
-							src={summaryStockage}
-							alt='summary stockage'
-							width={200}
-							height={200}
-							layout='responsive'
-						/>
-					</div>
-					<p className='summary-stockage-price'>24€/mois</p>
-					<p className='summary-stockage-volume'>Pour un volume de 0.5m3</p>
+					{steps?.stockage_step.src && (
+						<Image src={steps?.stockage_step.src} alt={steps?.stockage_step.title} />
+					)}
+
+					<p suppressHydrationWarning className='summary-stockage-price'>
+						{steps.stockage_step.price}€/mois
+					</p>
+					<p className='summary-stockage-volume'>
+						Pour un volume de {steps.stockage_step.cubic_meter}
+					</p>
 					<p className='summary-stockage-content'>
 						Bonne nouvelle ! Vous économisez 30% par rapport à un box de stockage
 						traditionnel de taille équivalente.
 					</p>
 					<div className='flex flex-row'>
 						<div className='summary-stockage-advantage'>
-							<p className='summary-stockage-box__title'>Les + de Gilbert :</p>
+							<p className='summary-stockage-advantage-title'>Les + de Gilbert :</p>
 							<ul className='summary-stockage-advantage-list'>
 								<li className='summary-stockage-advantage-item'>
-									<p>√ GRATUIT : accès illimité à vos affaires</p>
+									<p className='summary-stockage-advantage-item--green'>
+										√ GRATUIT : accès illimité à vos affaires
+									</p>
 								</li>
 								<li className='summary-stockage-advantage-item'>
-									<p>√ INCLUS : relivraison à tout moment</p>
+									<p className='summary-stockage-advantage-item--green'>
+										√ INCLUS : relivraison à tout moment
+									</p>
 								</li>
 								<li className='summary-stockage-advantage-item'>
-									<p>√ PAS de cadenas nécessaire</p>
+									<p className='summary-stockage-advantage-item--green'>
+										√ PAS de cadenas nécessaire
+									</p>
 								</li>
 								<li className='summary-stockage-advantage-item'>
-									<p>√ PAS de frais de dossier </p>
+									<p className='summary-stockage-advantage-item--green'>
+										√ PAS de frais de dossier
+									</p>
 								</li>
 								<li className='summary-stockage-advantage-item'>
-									<p>√ Prix bloqué</p>
+									<p className='summary-stockage-advantage-item--green'>√ Prix bloqué</p>
 								</li>
 							</ul>
 						</div>
 						<div className='summary-stockage-advantage'>
-							<p className='summary-stockage-box__title'>
+							<p className='summary-stockage-advantage-title'>
 								Vos affaires en toute sécurité
 							</p>
 							<ul className='summary-stockage-advantage-list'>
@@ -72,6 +78,7 @@ const Stockage = () => {
 							</ul>
 						</div>
 					</div>
+					<Button hrefLink={routes.packaging}></Button>
 				</div>
 			</section>
 		</Layout>
