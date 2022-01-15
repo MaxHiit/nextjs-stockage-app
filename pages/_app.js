@@ -1,5 +1,5 @@
 import '../styles/styles.scss'
-import { ContextProvider } from '@context/UserContext'
+import { ContextProvider } from '@context/stepContext'
 
 function MyApp({ Component, pageProps }) {
 	return (
