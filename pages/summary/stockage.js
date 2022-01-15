@@ -1,22 +1,27 @@
-import Image from 'next/image'
-import Layout from '@components/Layout'
-// import { useUserContext } from '@context/UserContext'
-import React from 'react'
+import { useStepContext } from '@context/stepContext'
 
-import summaryStockage from '../../public/images/summary-stockage.png'
+import Layout from '@components/Layout'
+import Image from '@components/Image'
+import Button from '@components/Button'
+import routes from '@config/routes'
 
 const Stockage = () => {
-	// const { userData } = useUserContext()
+	const { steps } = useStepContext()
 
 	return (
 		<Layout pageTitle='Votre tarif de stockage'>
 			<section className='section-page summary-stockage'>
 				<div className='flex flex-column flex-centered'>
-					<div className='image-wrapper'>
-						<Image src={summaryStockage} alt='summary stockage' layout='responsive' />
-					</div>
-					<p className='summary-stockage-price'>24€/mois</p>
-					<p className='summary-stockage-volume'>Pour un volume de 0.5m3</p>
+					{steps?.stockage_step.src && (
+						<Image src={steps?.stockage_step.src} alt={steps?.stockage_step.title} />
+					)}
+
+					<p suppressHydrationWarning className='summary-stockage-price'>
+						{steps.stockage_step.price}€/mois
+					</p>
+					<p className='summary-stockage-volume'>
+						Pour un volume de {steps.stockage_step.cubic_meter}
+					</p>
 					<p className='summary-stockage-content'>
 						Bonne nouvelle ! Vous économisez 30% par rapport à un box de stockage
 						traditionnel de taille équivalente.
@@ -73,6 +78,7 @@ const Stockage = () => {
 							</ul>
 						</div>
 					</div>
+					<Button hrefLink={routes.packaging}></Button>
 				</div>
 			</section>
 		</Layout>
