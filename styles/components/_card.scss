@@ -12,13 +12,15 @@
 
 	&-content {
 		text-align: center;
+		height: 345px;
 
 		&-title {
 			font-size: 2.5rem;
-			@include padding(10px 0);
+			@include padding(0 0 space(2) 0);
 		}
+
 		&-description {
-			font-size: 2.2rem;
+			font-size: 2rem;
 		}
 		&-stockage {
 			font-size: 2.2rem;
@@ -26,6 +28,34 @@
 		}
 		&-price {
 			font-size: 2rem;
+		}
+	}
+
+	&-packaging {
+		&-content {
+			height: auto;
+			@include margin(space(3.5) 0);
+		}
+
+		&-bottom {
+			justify-content: space-between;
+			align-items: center;
+			border-top: 1px solid $color-border;
+			margin: 0 -20px;
+			padding: 20px 20px 0;
+
+			.btn {
+				margin: 0;
+			}
+		}
+	}
+
+	&-tag {
+		color: $color-blue-darker;
+
+		&-wrapper {
+			background: $color-blue-lightless;
+			@include padding(space(0.65) space(1.25));
 		}
 	}
 }
