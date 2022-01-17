@@ -8,8 +8,7 @@ import Card from '@components/Card'
 const Home = () => {
 	const { dispatch } = useStepContext()
 
-	const _handleClick = (data, e) => {
-		e.preventDefault()
+	const _handleClick = (data) => {
 		const { title, price, stockage, cubic_meter, src } = data
 		dispatch({
 			type: 'ADD_STOCKAGE_STEP',
@@ -26,7 +25,7 @@ const Home = () => {
 								key={key + data.id}
 								data={data}
 								route={routes.summary}
-								onClickHandle={(e) => _handleClick(data, e)}
+								onClickHandle={() => _handleClick(data)}
 							/>
 						))}
 					</div>
