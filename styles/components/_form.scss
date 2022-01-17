@@ -1,0 +1,32 @@
+.form {
+	&-label {
+		font-size: 2.7rem;
+		@include padding(0 0 space(1) 0);
+	}
+
+	&-input {
+		@include padding(space(1) space(3));
+		border: 1px solid $color-border;
+
+		&:focus {
+			outline: 2px solid $color-blue;
+		}
+
+		&-wrapper {
+			&:nth-child(even) {
+				@include margin(space(3) 0);
+			}
+		}
+	}
+
+	input[type='submit']:disabled {
+		opacity: 0.5;
+		cursor: auto;
+	}
+
+	&-message {
+		&--error {
+			color: $color-error;
+		}
+	}
+}

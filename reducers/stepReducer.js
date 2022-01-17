@@ -33,6 +33,13 @@ export const stepReducer = (state, action) => {
 					...action.payload,
 				},
 			}
+		case 'ADD_USER_STEP':
+			return {
+				...state,
+				user_step: {
+					...action.payload,
+				},
+			}
 		default:
 			return state
 	}
