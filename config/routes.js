@@ -4,6 +4,7 @@ const routes = {
 	packaging: '/packaging',
 	transport: '/transport',
 	insurance: '/insurance',
+	contact: '/contact',
 }
 
 export default routes

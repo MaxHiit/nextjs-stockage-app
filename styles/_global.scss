@@ -34,6 +34,15 @@ li {
 	list-style: none;
 }
 
+input {
+	outline: none;
+	background-image: none;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 header {
 	height: 10vh;
 }
